@@ -389,18 +389,15 @@ Reveal.addEventListener( 'customevent', function() {
 
     multiplex: {
         // Example values. To generate your own, see the socket.io server instructions.
-        secret: '14525072408221648047', // Obtained from the socket.io server. Gives this (the master) control of the presentation
-        id: 'cd30b6782b1c7c5f', // Obtained from socket.io server
+        secret: null, // null so the clients do not have control of the master presentation
+        id: 'cd30b6782b1c7c5f', // id, obtained from socket.io server
         url: 'revealjspgulbickij.herokuapp.com' // Location of socket.io server
     },
 
     // Don't forget to add the dependencies
     dependencies: [
         { src: '//cdn.socket.io/socket.io-1.3.5.js', async: true },
-        { src: 'plugin/multiplex/master.js', async: true },
-
-        // and if you want speaker notes
-        { src: 'plugin/notes-server/client.js', async: true }
+        { src: 'plugin/multiplex/client.js', async: true }
 
         // other dependencies...
     ]
